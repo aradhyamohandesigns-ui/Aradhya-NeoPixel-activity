@@ -1,0 +1,32 @@
+from machine import Pin
+import time
+import neopixel
+
+px = neopixel.NeoPixel(Pin(4, Pin.OUT), 16)
+bz = Pin(5, Pin.OUT)
+while True:
+    for i in range (16) :
+        px[i] = (255, 0, 150)
+        px.write()
+        time.sleep(0.2)
+        
+    bz.on()
+    time.sleep(0.3)
+    bz.off()
+    
+     
+    for i in range (15, -1, -1) :
+        px[i] = (0, 255, 200)
+        px.write()
+        time.sleep(0.2)
+        
+    bz.on()
+    time.sleep(0.3)
+    bz.off()            
+        
+        
+    
+    
+    
+    
+    
